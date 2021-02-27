@@ -6,26 +6,32 @@ import PostList from '../post-list';
 import PostAddForm from '../post-add-form';
 
 import './app.css';
+import styled from 'styled-components';
+
+const AppBlock = styled.div`
+    margin: 0 auto;
+    max-width: 800px;
+`;
 
 const App = () => {
 
     const data = [
-        {label:'Going to learn React', important:true,id:'qwert'},
-        {label:'This is so good', important:false,id:'asdfg'},
-        {label:'I need a break...', important:false,id:'bnm'},
+        { label: 'Going to learn React', important: true, id: 'qwert' },
+        { label: 'This is so good', important: false, id: 'asdfg' },
+        { label: 'I need a break...', important: false, id: 'bnm' },
 
     ];
 
     return (
-        <div className="app">
+        <AppBlock>
             <AppHeader />
             <div className="search-panel d-flex">
                 <SearchPanel />
-                <PostStatusFilter/>
+                <PostStatusFilter />
             </div>
-            <PostList posts={data}/>
-            <PostAddForm/>
-        </div>
+            <PostList posts={data} />
+            <PostAddForm />
+        </AppBlock>
     );
 }
 
